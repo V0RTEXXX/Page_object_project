@@ -26,3 +26,11 @@ class ProductPage(BasePage):
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
         assert product_price in message_basket_total, (
             "Отсутствует цена товара в сообщении")
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), (
+            "Появляется положительное сообщение, хотя не должно было")
+
+    def success_message_should_disappear(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), (
+            "Положительное сообщение не появляется, хотя должно было")
