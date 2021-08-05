@@ -30,3 +30,7 @@ class BasePageLocators(object):
     BASKET_BUTTON = (By.CSS_SELECTOR, ".basket-mini a")
     BASKET_BUTTON_INVALID = (By.CSS_SELECTOR, ".basket-mini_inc")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+
+class BasketPageLocators(object):
+    BASKET_PRODUCT_NAME = (By.CSS_SELECTOR, ".basket-items h3")
+    BASKET_EMPTY_TEXT = (By.CSS_SELECTOR, "#content_inner p")
