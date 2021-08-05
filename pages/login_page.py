@@ -30,3 +30,9 @@ class LoginPage(BasePage):
             "Отсутствует форма ввода подтверждения пароля для регистрации")
         assert self.is_element_present(*LoginPageLocators.REGISTER_BUTTON_REGISTER), (
             "Отсутствует кнопка регистрации")
+
+    def register_new_user(self, email, password):
+        self.browser.find_element(*LoginPageLocators.REGISTER_INPUT_EMAIL).send_keys(email)
+        self.browser.find_element(*LoginPageLocators.REGISTER_INPUT_PASSWORD).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.REGISTER_INPUT_PASSWORD_CONFIRM).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.REGISTER_BUTTON_REGISTER).click()
